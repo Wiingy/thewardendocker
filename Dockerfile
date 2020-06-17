@@ -11,7 +11,7 @@ RUN apt-get update && \
 COPY . /app/thewarden
 WORKDIR /app/thewarden
 
-RUN git clone https://github.com/pxsocs/thewarden.git
+#RUN git clone https://github.com/pxsocs/thewarden.git
 RUN pip3 install virtualenv
 RUN virtualenv cb_env
 RUN . cb_env/bin/activate
