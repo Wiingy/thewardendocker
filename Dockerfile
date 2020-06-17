@@ -11,10 +11,10 @@ RUN apt-get update && \
 COPY . /app/thewarden
 WORKDIR /app/thewarden
 
-# RUN git clone https://github.com/pxsocs/thewarden.git
-# RUN pip3 install virtualenv
-# RUN virtualenv cb_env
-# RUN . cb_env/bin/activate
+RUN git clone https://github.com/pxsocs/thewarden.git
+RUN pip3 install virtualenv
+RUN virtualenv cb_env
+RUN . cb_env/bin/activate
 RUN pip3 install -r requirements.txt
 
 CMD ["python3", "-u", "warden.py", "--host", "127.0.0.1"]
